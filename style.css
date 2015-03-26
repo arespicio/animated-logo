@@ -1,0 +1,102 @@
+#box{
+  -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+#timer{
+  height:250px;
+  margin:auto;
+  position:relative;
+  width:250px;
+}
+
+ #inner{
+  height:230px;
+  /*margin-top: 10px;*/
+  margin-left: 2px;
+  position:relative;
+  width:230px;
+  z-index: 100;
+}
+
+.circle {
+  border-radius:50%;
+  bottom:1px;
+  left:1px;
+  position:absolute;
+  right:1px;
+  top:1px;
+}
+
+.inner-circle{
+  background-color: #fff;
+  border-radius:50%;
+  /*bottom:1px;*/
+  left:8px;
+  /*position:absolute;*/
+  /*right:1px;*/
+  top:10px;
+}
+
+/* z-index */
+#color-left {z-index:2;}
+#color-right {z-index:3;}
+#cover {z-index:4;}
+
+/* backgrounds */
+#cover {
+  background:-webkit-linear-gradient(left, transparent 0, transparent 50%, #fff 50%, #fff 100%);
+}
+
+.color {
+  background:-webkit-linear-gradient(left, transparent 0, transparent 50%, #8cba5c 50%, #8cba5c 180%);
+}
+
+#cover {
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+  visibility:hidden;
+}
+
+#color-left {-webkit-transform:rotate(180deg);}
+
+@-webkit-keyframes firstspin {
+ 0% {visibility:visible;-webkit-transform:rotate(0);}
+ 50% {visibility:visible;-webkit-transform:rotate(180deg);}
+ 50% {visibility:hidden;-webkit-transform:rotate(180deg);}
+ 100% {visibility:hidden;-webkit-transform:rotate(180deg);}
+}
+
+@-webkit-keyframes secondspin {
+ 0% {visibility:hidden;-webkit-transform:rotate(0);}
+ 50% {visibility:hidden;-webkit-transform:rotate(0);}
+ 50% {visibility:visible;-webkit-transform:rotate(0);}
+ 100% {visibility:visible;-webkit-transform:rotate(180deg);}
+}
+
+#cover, #color-left {
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count:1;
+  -webkit-animation-timing-function: linear;
+}
+
+#cover {-webkit-animation-name: firstspin;}
+#color-left {-webkit-animation-name: secondspin;}
+
+#blank {
+  height: 20px;
+  width: 20px;
+  background-color: #623c25;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-left: 45%;
+  margin-top: -4%;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
