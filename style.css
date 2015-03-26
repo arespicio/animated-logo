@@ -57,10 +57,18 @@
 /* backgrounds */
 #cover {
   background:-webkit-linear-gradient(left, transparent 0, transparent 50%, #fff 50%, #fff 100%);
+  background:-moz-linear-gradient(left, transparent 0, transparent 50%, #fff 50%, #fff 100%);
+  background:-ms-linear-gradient(left, transparent 0, transparent 50%, #fff 50%, #fff 100%);
+  background:-o-linear-gradient(left, transparent 0, transparent 50%, #fff 50%, #fff 100%);
+  background:linear-gradient(left, transparent 0, transparent 50%, #fff 50%, #fff 100%);
 }
 
 .color {
   background:-webkit-linear-gradient(left, transparent 0, transparent 50%, #8cba5c 50%, #8cba5c 180%);
+  background:-moz-linear-gradient(left, transparent 0, transparent 50%, #8cba5c 50%, #8cba5c 180%);
+  background:-ms-linear-gradient(left, transparent 0, transparent 50%, #8cba5c 50%, #8cba5c 180%);
+  background:-o-linear-gradient(left, transparent 0, transparent 50%, #8cba5c 50%, #8cba5c 180%);
+  background:linear-gradient(left, transparent 0, transparent 50%, #8cba5c 50%, #8cba5c 180%);
 }
 
 #cover {
@@ -71,13 +79,40 @@
   visibility:hidden;
 }
 
-#color-left {-webkit-transform:rotate(180deg);}
+#color-left {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
 @-webkit-keyframes firstspin {
  0% {visibility:visible;-webkit-transform:rotate(0);}
  50% {visibility:visible;-webkit-transform:rotate(180deg);}
  50% {visibility:hidden;-webkit-transform:rotate(180deg);}
  100% {visibility:hidden;-webkit-transform:rotate(180deg);}
+}
+
+@-moz-keyframes firstspin {
+ 0% {visibility:visible;-moz-transform:rotate(0);}
+ 50% {visibility:visible;-moz-transform:rotate(180deg);}
+ 50% {visibility:hidden;-moz-transform:rotate(180deg);}
+ 100% {visibility:hidden;-moz-transform:rotate(180deg);}
+}
+
+@-o-keyframes firstspin {
+ 0% {visibility:visible;-o-transform:rotate(0);}
+ 50% {visibility:visible;-o-transform:rotate(180deg);}
+ 50% {visibility:hidden;-o-transform:rotate(180deg);}
+ 100% {visibility:hidden;-o-transform:rotate(180deg);}
+}
+
+@keyframes firstspin {
+ 0% {visibility:visible;transform:rotate(0);}
+ 50% {visibility:visible;transform:rotate(180deg);}
+ 50% {visibility:hidden;transform:rotate(180deg);}
+ 100% {visibility:hidden;transform:rotate(180deg);}
 }
 
 @-webkit-keyframes secondspin {
@@ -87,14 +122,64 @@
  100% {visibility:visible;-webkit-transform:rotate(180deg);}
 }
 
+@-moz-keyframes secondspin {
+ 0% {visibility:hidden;-moz-transform:rotate(0);}
+ 50% {visibility:hidden;-moz-transform:rotate(0);}
+ 50% {visibility:visible;-moz-transform:rotate(0);}
+ 100% {visibility:visible;-moz-transform:rotate(180deg);}
+}
+
+@-o-keyframes secondspin {
+ 0% {visibility:hidden;-o-transform:rotate(0);}
+ 50% {visibility:hidden;-o-transform:rotate(0);}
+ 50% {visibility:visible;-o-transform:rotate(0);}
+ 100% {visibility:visible;-o-transform:rotate(180deg);}
+}
+
+@keyframes secondspin {
+ 0% {visibility:hidden;transform:rotate(0);}
+ 50% {visibility:hidden;transform:rotate(0);}
+ 50% {visibility:visible;transform:rotate(0);}
+ 100% {visibility:visible;transform:rotate(180deg);}
+}
+
 #cover, #color-left {
   -webkit-animation-duration: 6s;
   -webkit-animation-iteration-count:1;
   -webkit-animation-timing-function: linear;
+
+  -moz-animation-duration: 6s;
+  -moz-animation-iteration-count:1;
+  -moz-animation-timing-function: linear;
+
+  -ms-animation-duration: 6s;
+  -ms-animation-iteration-count:1;
+  -ms-animation-timing-function: linear;
+
+  -o-animation-duration: 6s;
+  -o-animation-iteration-count:1;
+  -o-animation-timing-function: linear;
+
+  animation-duration: 6s;
+  animation-iteration-count:1;
+  animation-timing-function: linear;
 }
 
-#cover {-webkit-animation-name: firstspin;}
-#color-left {-webkit-animation-name: secondspin;}
+#cover {
+  -webkit-animation-name: firstspin;
+  -moz-animation-name: firstspin;
+  -ms-animation-name: firstspin;
+  -o-animation-name: firstspin;
+  animation-name: firstspin;
+}
+
+#color-left {
+  -webkit-animation-name: secondspin;
+  -moz-animation-name: secondspin;
+  -ms-animation-name: secondspin;
+  -o-animation-name: secondspin;
+  animation-name: secondspin;
+}
 
 #blank {
   height: 20px;
